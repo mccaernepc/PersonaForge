@@ -1,0 +1,85 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Persona Schema",
+    "description": "Schema for defining PersonaForge personas",
+    "type": "object",
+    "properties": {
+      "category": {
+        "type": "string",
+        "description": "Main category of the persona",
+        "enum": ["Legal", "Medical", "Auto Repair", "Business", "Finance", "Marketing", "Technology", "Education"]
+      },
+      "sub_category": {
+        "type": "string",
+        "description": "Sub-category within the main category"
+      },
+      "core_attributes": {
+        "type": "object",
+        "description": "Common attributes for all personas",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Name of the persona"
+          },
+          "age": {
+            "type": "integer",
+            "description": "Age of the persona"
+          },
+          "description": {
+            "type": "string",
+            "description": "General background/summary of the persona"
+          },
+          "personality_traits": {
+            "type": "object",
+            "properties": {
+              "openness": {
+                "type": "string",
+                "enum": ["High", "Low"]
+              },
+              "conscientiousness": {
+                "type": "string",
+                "enum": ["High", "Low"]
+              },
+              "agreeableness": {
+                "type": "string",
+                "enum": ["High", "Low"]
+              },
+              "neuroticism": {
+                "type": "string",
+                "enum": ["High", "Low"]
+              }
+            }
+          },
+          "motivations": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "background": {
+            "type": "object",
+            "properties": {
+              "education": {
+                "type": "string"
+              },
+              "life_experiences": {
+                "type": "string"
+              }
+            }
+          },
+          "skills": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": ["name", "age", "description", "personality_traits", "motivations", "background", "skills"]
+      },
+      "category_specific_attributes": {
+        "type": "object",
+        "description": "Attributes specific to the chosen sub-category"
+      }
+    },
+    "required": ["category", "sub_category", "core_attributes", "category_specific_attributes"]
+  }

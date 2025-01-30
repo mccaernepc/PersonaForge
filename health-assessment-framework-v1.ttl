@@ -1,0 +1,1174 @@
+@prefix : <http://example.org/health-assessment#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix snomed: <http://snomed.info/id/> .
+@base <http://example.org/health-assessment#> .
+
+<http://example.org/health-assessment#Assessment> rdf:type owl:Ontology ;
+                                                   rdfs:comment "Represents an instance of a comprehensive health assessment performed on a user or patient."@en ;
+                                                   rdfs:label "Health Assessment"@en .
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#date
+xsd:dateTime rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://example.org/health-assessment#alleviates
+:alleviates rdf:type owl:ObjectProperty ;
+            rdfs:domain :Symptom ;
+            rdfs:range :Symptom ;
+            rdfs:comment "Indicates that a factor or intervention improves a symptom."@en ;
+            rdfs:label "alleviates"@en .
+
+
+###  http://example.org/health-assessment#asks
+:asks rdf:type owl:ObjectProperty ;
+      rdfs:domain :AssessmentStep ;
+      rdfs:range :AssessmentQuestion ;
+      rdfs:comment "Links an assessment step to the questions that are asked during that step."@en ;
+      rdfs:label "asks"@en .
+
+
+###  http://example.org/health-assessment#confirms
+:confirms rdf:type owl:ObjectProperty ;
+          rdfs:domain :AssessmentQuestion ;
+          rdfs:range :Diagnosis ;
+          rdfs:comment "Indicates that the purpose of an assessment question is to help confirm a particular diagnosis."@en ;
+          rdfs:label "confirms"@en .
+
+
+###  http://example.org/health-assessment#currentAssessment
+:currentAssessment rdf:type owl:ObjectProperty ;
+                   rdfs:domain :User ;
+                   rdfs:range <http://example.org/health-assessment#Assessment> ;
+                   rdfs:comment "Links a user to their current active health assessment."@en ;
+                   rdfs:label "current assessment"@en .
+
+
+###  http://example.org/health-assessment#exacerbates
+:exacerbates rdf:type owl:ObjectProperty ;
+             rdfs:domain :Symptom ;
+             rdfs:range :Symptom ;
+             rdfs:comment "Indicates that a symptom or condition worsens another symptom."@en ;
+             rdfs:label "exacerbates"@en .
+
+
+###  http://example.org/health-assessment#hasDiagnosis
+:hasDiagnosis rdf:type owl:ObjectProperty ;
+              rdfs:domain :UserResponse ;
+              rdfs:range :Diagnosis ;
+              rdfs:comment "Indicates that a user response suggests a particular diagnosis or condition."@en ;
+              rdfs:label "has diagnosis"@en .
+
+
+###  http://example.org/health-assessment#hasFinding
+:hasFinding rdf:type owl:ObjectProperty ;
+            rdfs:domain :UserResponse ;
+            rdfs:range :PhysicalExamFinding ;
+            rdfs:comment "Indicates that a user response includes a specific physical exam finding."@en ;
+            rdfs:label "has finding"@en .
+
+
+###  http://example.org/health-assessment#hasPatient
+:hasPatient rdf:type owl:ObjectProperty ;
+            rdfs:domain <http://example.org/health-assessment#Assessment> ;
+            rdfs:range :Patient ;
+            rdfs:comment "Links an assessment to a specific patient."@en ;
+            rdfs:label "has patient"@en .
+
+
+###  http://example.org/health-assessment#hasProcedure
+:hasProcedure rdf:type owl:ObjectProperty ;
+              rdfs:domain :UserResponse ;
+              rdfs:range :Procedure ;
+              rdfs:comment "Indicates that a user response indicates they have undergone a procedure."@en ;
+              rdfs:label "has procedure"@en .
+
+
+###  http://example.org/health-assessment#hasRiskFactor
+:hasRiskFactor rdf:type owl:ObjectProperty ;
+               rdfs:domain :UserResponse ;
+               rdfs:range :RiskFactor ;
+               rdfs:comment "Indicates that a user response suggests the presence of a risk factor."@en ;
+               rdfs:label "has risk factor"@en .
+
+
+###  http://example.org/health-assessment#hasSymptom
+:hasSymptom rdf:type owl:ObjectProperty ;
+            rdfs:domain :UserResponse ;
+            rdfs:range :Symptom ;
+            rdfs:comment "Indicates that a user response suggests the presence of a particular symptom."@en ;
+            rdfs:label "has symptom"@en .
+
+
+###  http://example.org/health-assessment#likelihood
+:likelihood rdf:type owl:ObjectProperty ;
+            rdfs:domain :UserResponse ;
+            rdfs:range :Concept ;
+            rdfs:comment "Connects a UserResponse to a concept, indicating the likelihood."@en ;
+            rdfs:label "likelihood"@en .
+
+
+###  http://example.org/health-assessment#maySuggest
+:maySuggest rdf:type owl:ObjectProperty ;
+            rdfs:domain :UserResponse ;
+            rdfs:range :Diagnosis ;
+            rdfs:comment "Indicates that a diagnosis is suggested based on user responses."@en ;
+            rdfs:label "may suggest"@en .
+
+
+###  http://example.org/health-assessment#nextStep
+:nextStep rdf:type owl:ObjectProperty ;
+          rdfs:domain :AssessmentStep ;
+          rdfs:range :AssessmentStep ;
+          rdfs:comment "Defines the sequential order of steps within an assessment."@en ;
+          rdfs:label "next step"@en .
+
+
+###  http://example.org/health-assessment#partOf
+:partOf rdf:type owl:ObjectProperty ;
+        rdfs:domain :AssessmentStep ;
+        rdfs:range <http://example.org/health-assessment#Assessment> ;
+        rdfs:comment "Indicates that an assessment step is part of a particular assessment."@en ;
+        rdfs:label "part of"@en .
+
+
+###  http://example.org/health-assessment#precedes
+:precedes rdf:type owl:ObjectProperty ;
+          rdfs:domain :AssessmentQuestion ;
+          rdfs:range :AssessmentQuestion ;
+          rdfs:comment "Indicates that one assessment question should be asked before another."@en ;
+          rdfs:label "precedes"@en .
+
+
+###  http://example.org/health-assessment#relatesTo
+:relatesTo rdf:type owl:ObjectProperty ;
+           rdfs:domain :AssessmentQuestion ;
+           rdfs:range :Concept ;
+           rdfs:comment "Connects an assessment question to relevant medical concepts."@en ;
+           rdfs:label "relates to"@en .
+
+
+###  http://example.org/health-assessment#responseTo
+:responseTo rdf:type owl:ObjectProperty ;
+            rdfs:domain :UserResponse ;
+            rdfs:range :AssessmentQuestion ;
+            rdfs:comment "Links a user's response to the specific question it answers."@en ;
+            rdfs:label "response to"@en .
+
+
+###  http://example.org/health-assessment#ruleOut
+:ruleOut rdf:type owl:ObjectProperty ;
+         rdfs:domain :AssessmentQuestion ;
+         rdfs:range :Diagnosis ;
+         rdfs:comment "Indicates that the purpose of an assessment question is to help rule out a particular diagnosis."@en ;
+         rdfs:label "rule out"@en .
+
+
+###  http://example.org/health-assessment#suggests
+:suggests rdf:type owl:ObjectProperty ;
+          rdfs:domain :Symptom ;
+          rdfs:range :Diagnosis ;
+          rdfs:comment "Indicates that a symptom suggests a potential diagnosis."@en ;
+          rdfs:label "suggests"@en .
+
+
+###  http://example.org/health-assessment#takesMedication
+:takesMedication rdf:type owl:ObjectProperty ;
+                 rdfs:domain :UserResponse ;
+                 rdfs:range :Medication ;
+                 rdfs:comment "Indicates that a user response indicates they are taking a particular medication."@en ;
+                 rdfs:label "takes medication"@en .
+
+
+###  http://example.org/health-assessment#targets
+:targets rdf:type owl:ObjectProperty ;
+         rdfs:domain :AssessmentQuestion ;
+         rdfs:range :PhysicalExamFinding ;
+         rdfs:comment "Indicates that an assessment question is intended to assess a specific physical exam finding."@en ;
+         rdfs:label "targets"@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://example.org/health-assessment#aggravatingFactors
+:aggravatingFactors rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :Symptom ;
+                    rdfs:range xsd:string ;
+                    rdfs:comment "Factors that worsen the symptom."@en ;
+                    rdfs:label "aggravating factors"@en .
+
+
+###  http://example.org/health-assessment#assessmentID
+:assessmentID rdf:type owl:DatatypeProperty ;
+              rdfs:domain <http://example.org/health-assessment#Assessment> ;
+              rdfs:range xsd:string ;
+              rdfs:comment "Unique ID for the assessment."@en ;
+              rdfs:label "assessment ID"@en .
+
+
+###  http://example.org/health-assessment#character
+:character rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Symptom ;
+           rdfs:range xsd:string ;
+           rdfs:comment "Character of the symptom."@en ;
+           rdfs:label "character"@en .
+
+
+###  http://example.org/health-assessment#code
+:code rdf:type owl:DatatypeProperty ;
+      rdfs:domain :Concept ;
+      rdfs:range xsd:string ;
+      rdfs:comment "Concept code within its source terminology."@en ;
+      rdfs:label "code"@en .
+
+
+###  http://example.org/health-assessment#confidence
+:confidence rdf:type owl:DatatypeProperty ;
+            rdfs:domain :UserResponse ;
+            rdfs:range xsd:float ;
+            rdfs:comment "Confidence score for the extracted value."@en ;
+            rdfs:label "confidence"@en .
+
+
+###  http://example.org/health-assessment#dosage
+:dosage rdf:type owl:DatatypeProperty ;
+        rdfs:domain :Medication ;
+        rdfs:range xsd:string ;
+        rdfs:comment "Dosage of the medication."@en ;
+        rdfs:label "dosage"@en .
+
+
+###  http://example.org/health-assessment#duration
+:duration rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Symptom ;
+          rdfs:range xsd:string ;
+          rdfs:comment "Duration of the symptom."@en ;
+          rdfs:label "duration"@en .
+
+
+###  http://example.org/health-assessment#endDate
+:endDate rdf:type owl:DatatypeProperty ;
+         rdfs:domain :Medication ;
+         rdfs:range xsd:dateTime ;
+         rdfs:comment "End date of the medication."@en ;
+         rdfs:label "end date"@en .
+
+
+###  http://example.org/health-assessment#endTime
+:endTime rdf:type owl:DatatypeProperty ;
+         rdfs:domain <http://example.org/health-assessment#Assessment> ;
+         rdfs:range xsd:dateTime ;
+         rdfs:comment "When the assessment ended."@en ;
+         rdfs:label "end time"@en .
+
+
+###  http://example.org/health-assessment#extractedValue
+:extractedValue rdf:type owl:DatatypeProperty ;
+                rdfs:domain :UserResponse ;
+                rdfs:range xsd:string ;
+                rdfs:comment "Structured value extracted from the response."@en ;
+                rdfs:label "extracted value"@en .
+
+
+###  http://example.org/health-assessment#findingType
+:findingType rdf:type owl:DatatypeProperty ;
+             rdfs:domain :PhysicalExamFinding ;
+             rdfs:range xsd:string ;
+             rdfs:comment "Type of physical exam finding (e.g., observation, measurement)."@en ;
+             rdfs:label "finding type"@en .
+
+
+###  http://example.org/health-assessment#frequency
+:frequency rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Medication ;
+           rdfs:range xsd:string ;
+           rdfs:comment "Frequency of taking the medication."@en ;
+           rdfs:label "frequency"@en .
+
+
+###  http://example.org/health-assessment#location
+:location rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Symptom ;
+          rdfs:range xsd:string ;
+          rdfs:comment "Location of the symptom."@en ;
+          rdfs:label "location"@en .
+
+
+###  http://example.org/health-assessment#onset
+:onset rdf:type owl:DatatypeProperty ;
+       rdfs:domain :Symptom ;
+       rdfs:range xsd:string ;
+       rdfs:comment "Onset of the symptom."@en ;
+       rdfs:label "onset"@en .
+
+
+###  http://example.org/health-assessment#preferredTerm
+:preferredTerm rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Concept ;
+               rdfs:range xsd:string ;
+               rdfs:comment "Preferred term/label for the concept."@en ;
+               rdfs:label "preferred term"@en .
+
+
+###  http://example.org/health-assessment#procedureDate
+:procedureDate rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Procedure ;
+               rdfs:range xsd:dateTime ;
+               rdfs:comment "Date the procedure was performed."@en ;
+               rdfs:label "procedure date"@en .
+
+
+###  http://example.org/health-assessment#questionCode
+:questionCode rdf:type owl:DatatypeProperty ;
+              rdfs:domain :AssessmentQuestion ;
+              rdfs:range xsd:string ;
+              rdfs:comment "Unique code for the question."@en ;
+              rdfs:label "question code"@en .
+
+
+###  http://example.org/health-assessment#questionText
+:questionText rdf:type owl:DatatypeProperty ;
+              rdfs:domain :AssessmentQuestion ;
+              rdfs:range xsd:string ;
+              rdfs:comment "The exact question text."@en ;
+              rdfs:label "question text"@en .
+
+
+###  http://example.org/health-assessment#questionType
+:questionType rdf:type owl:DatatypeProperty ;
+              rdfs:domain :AssessmentQuestion ;
+              rdfs:range xsd:string ;
+              rdfs:comment "Type of question."@en ;
+              rdfs:label "question type"@en .
+
+
+###  http://example.org/health-assessment#radiation
+:radiation rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Symptom ;
+           rdfs:range xsd:string ;
+           rdfs:comment "Radiation of the symptom."@en ;
+           rdfs:label "radiation"@en .
+
+
+###  http://example.org/health-assessment#relievingFactors
+:relievingFactors rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :Symptom ;
+                  rdfs:range xsd:string ;
+                  rdfs:comment "Factors that improve the symptom."@en ;
+                  rdfs:label "relieving factors"@en .
+
+
+###  http://example.org/health-assessment#responseText
+:responseText rdf:type owl:DatatypeProperty ;
+              rdfs:domain :UserResponse ;
+              rdfs:range xsd:string ;
+              rdfs:comment "The raw text of the user's response."@en ;
+              rdfs:label "response text"@en .
+
+
+###  http://example.org/health-assessment#responseTimestamp
+:responseTimestamp rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :UserResponse ;
+                   rdfs:range xsd:dateTime ;
+                   rdfs:comment "Timestamp of the response."@en ;
+                   rdfs:label "response timestamp"@en .
+
+
+###  http://example.org/health-assessment#route
+:route rdf:type owl:DatatypeProperty ;
+       rdfs:domain :Medication ;
+       rdfs:range xsd:string ;
+       rdfs:comment "Route of administration of the medication."@en ;
+       rdfs:label "route"@en .
+
+
+###  http://example.org/health-assessment#severity
+:severity rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Symptom ;
+          rdfs:range xsd:string ;
+          rdfs:comment "Severity of the symptom."@en ;
+          rdfs:label "severity"@en .
+
+
+###  http://example.org/health-assessment#source
+:source rdf:type owl:DatatypeProperty ;
+        rdfs:domain :Concept ;
+        rdfs:range xsd:string ;
+        rdfs:comment "Source terminology of the concept."@en ;
+        rdfs:label "source"@en .
+
+
+###  http://example.org/health-assessment#startDate
+:startDate rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Medication ;
+           rdfs:range xsd:dateTime ;
+           rdfs:comment "Start date of the medication."@en ;
+           rdfs:label "start date"@en .
+
+
+###  http://example.org/health-assessment#startTime
+:startTime rdf:type owl:DatatypeProperty ;
+           rdfs:domain <http://example.org/health-assessment#Assessment> ;
+           rdfs:range xsd:dateTime ;
+           rdfs:comment "When the assessment started."@en ;
+           rdfs:label "start time"@en .
+
+
+###  http://example.org/health-assessment#status
+:status rdf:type owl:DatatypeProperty ;
+        rdfs:domain <http://example.org/health-assessment#Assessment> ;
+        rdfs:range xsd:string ;
+        rdfs:comment "Status of the assessment."@en ;
+        rdfs:label "status"@en .
+
+
+###  http://example.org/health-assessment#stepDescription
+:stepDescription rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :AssessmentStep ;
+                 rdfs:range xsd:string ;
+                 rdfs:comment "Description of the assessment step."@en ;
+                 rdfs:label "step description"@en .
+
+
+###  http://example.org/health-assessment#stepName
+:stepName rdf:type owl:DatatypeProperty ;
+          rdfs:domain :AssessmentStep ;
+          rdfs:range xsd:string ;
+          rdfs:comment "The name of the assessment step."@en ;
+          rdfs:label "step name"@en .
+
+
+###  http://example.org/health-assessment#stepOrder
+:stepOrder rdf:type owl:DatatypeProperty ;
+           rdfs:domain :AssessmentStep ;
+           rdfs:range xsd:integer ;
+           rdfs:comment "The order of the step in the assessment."@en ;
+           rdfs:label "step order"@en .
+
+
+###  http://example.org/health-assessment#unit
+:unit rdf:type owl:DatatypeProperty ;
+      rdfs:domain :PhysicalExamFinding ;
+      rdfs:range xsd:string ;
+      rdfs:comment "Unit of measurement for the finding value."@en ;
+      rdfs:label "unit"@en .
+
+
+###  http://example.org/health-assessment#uri
+:uri rdf:type owl:DatatypeProperty ;
+     rdfs:domain :Concept ;
+     rdfs:range xsd:string ;
+     rdfs:comment "Unique URI of the concept."@en ;
+     rdfs:label "URI"@en .
+
+
+###  http://example.org/health-assessment#value
+:value rdf:type owl:DatatypeProperty ;
+       rdfs:domain :PhysicalExamFinding ;
+       rdfs:range xsd:string ;
+       rdfs:comment "The observed value of the finding."@en ;
+       rdfs:label "value"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://example.org/health-assessment#Assessment
+<http://example.org/health-assessment#Assessment> rdf:type owl:Class .
+
+
+###  http://example.org/health-assessment#AssessmentQuestion
+:AssessmentQuestion rdf:type owl:Class ;
+                    rdfs:comment "Represents a question asked during a health assessment."@en ;
+                    rdfs:label "Assessment Question"@en .
+
+
+###  http://example.org/health-assessment#AssessmentStep
+:AssessmentStep rdf:type owl:Class ;
+                rdfs:comment "Represents a specific step or section within a health assessment (e.g., Chief Complaint, Past Medical History)."@en ;
+                rdfs:label "Assessment Step"@en .
+
+
+###  http://example.org/health-assessment#Concept
+:Concept rdf:type owl:Class ;
+         rdfs:comment "Represents a general medical concept from a standardized terminology (e.g., SNOMED CT, ICD-11, MeSH)."@en ;
+         rdfs:label "Concept"@en .
+
+
+###  http://example.org/health-assessment#Diagnosis
+:Diagnosis rdf:type owl:Class ;
+           rdfs:subClassOf :Concept .
+
+
+###  http://example.org/health-assessment#LabResult
+:LabResult rdf:type owl:Class ;
+           rdfs:subClassOf :Concept ;
+           rdfs:comment "Represents a laboratory test result."@en ;
+           rdfs:label "Lab Result"@en .
+
+
+###  http://example.org/health-assessment#Medication
+:Medication rdf:type owl:Class ;
+            rdfs:subClassOf :Concept .
+
+
+###  http://example.org/health-assessment#Patient
+:Patient rdf:type owl:Class ;
+         rdfs:subClassOf :User ;
+         rdfs:comment "Represents the patient whose health data is being assessed."@en ;
+         rdfs:label "Patient"@en .
+
+
+###  http://example.org/health-assessment#PhysicalExamFinding
+:PhysicalExamFinding rdf:type owl:Class ;
+                     rdfs:subClassOf :Concept ;
+                     rdfs:comment "Represents a finding observed during a physical examination."@en ;
+                     rdfs:label "Physical Exam Finding"@en .
+
+
+###  http://example.org/health-assessment#Procedure
+:Procedure rdf:type owl:Class ;
+           rdfs:subClassOf :Concept .
+
+
+###  http://example.org/health-assessment#RiskFactor
+:RiskFactor rdf:type owl:Class ;
+            rdfs:subClassOf :Concept ;
+            rdfs:comment "Represents a risk factor that may contribute to a diagnosis."@en ;
+            rdfs:label "Risk Factor"@en .
+
+
+###  http://example.org/health-assessment#Symptom
+:Symptom rdf:type owl:Class ;
+         rdfs:subClassOf :Concept .
+
+
+###  http://example.org/health-assessment#User
+:User rdf:type owl:Class ;
+      rdfs:comment "Represents the user interacting with the AI persona."@en ;
+      rdfs:label "User"@en .
+
+
+###  http://example.org/health-assessment#UserResponse
+:UserResponse rdf:type owl:Class ;
+              rdfs:comment "Represents a user's response to an assessment question."@en ;
+              rdfs:label "User Response"@en .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://example.org/health-assessment#AdverseDrugReaction
+:AdverseDrugReaction rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/health-assessment#AllergicReaction
+:AllergicReaction rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/health-assessment#Allergy
+:Allergy rdf:type owl:NamedIndividual ,
+                  :Concept ;
+         :maySuggest :AllergicReaction ;
+         rdfs:label "Allergy" .
+
+
+###  http://example.org/health-assessment#Anxiety
+:Anxiety rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/health-assessment#AssessmentAndPlan
+:AssessmentAndPlan rdf:type owl:NamedIndividual ,
+                            :AssessmentStep ;
+                   :stepName "Assessment and Plan" ;
+                   :stepOrder 8 .
+
+
+###  http://example.org/health-assessment#BipolarDisorder
+:BipolarDisorder rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/health-assessment#COVID-19
+:COVID-19 rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/health-assessment#CardiovascularCondition
+:CardiovascularCondition rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/health-assessment#ChiefComplaint
+:ChiefComplaint rdf:type owl:NamedIndividual ,
+                         :AssessmentStep ;
+                :asks :question1 ;
+                :nextStep :HistoryOfPresentIllness ;
+                :stepName "Chief Complaint" ;
+                :stepOrder 1 .
+
+
+###  http://example.org/health-assessment#Complication
+:Complication rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/health-assessment#Cough
+:Cough rdf:type owl:NamedIndividual ,
+                :Symptom ;
+       :maySuggest :RespiratoryCondition ;
+       rdfs:label "Cough" .
+
+
+###  http://example.org/health-assessment#Depression
+:Depression rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/health-assessment#Diagnosis
+:Diagnosis rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/health-assessment#Diet
+:Diet rdf:type owl:NamedIndividual ,
+               :Concept ;
+      :maySuggest :NutritionalDeficiency ;
+      rdfs:label "Diet" .
+
+
+###  http://example.org/health-assessment#EatingDisorder
+:EatingDisorder rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/health-assessment#Exercise
+:Exercise rdf:type owl:NamedIndividual ,
+                   :Concept ;
+          :maySuggest :PhysicalFitness ;
+          rdfs:label "Exercise" .
+
+
+###  http://example.org/health-assessment#FamilyHistory
+:FamilyHistory rdf:type owl:NamedIndividual ,
+                        :AssessmentStep ;
+               :asks :question26 ,
+                     :question4 ;
+               :nextStep :SocialHistory ;
+               :stepName "Family History" ;
+               :stepOrder 4 .
+
+
+###  http://example.org/health-assessment#Fatigue
+:Fatigue rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/health-assessment#Fever
+:Fever rdf:type owl:NamedIndividual ,
+                :Symptom ;
+       :maySuggest :COVID-19 ,
+                   :Infection ;
+       rdfs:label "Fever" .
+
+
+###  http://example.org/health-assessment#GastrointestinalCondition
+:GastrointestinalCondition rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/health-assessment#HeartDisease
+:HeartDisease rdf:type owl:NamedIndividual ,
+                       :Diagnosis ;
+              :maySuggest :CardiovascularCondition ;
+              rdfs:label "Heart Disease" .
+
+
+###  http://example.org/health-assessment#HistoryOfPresentIllness
+:HistoryOfPresentIllness rdf:type owl:NamedIndividual ,
+                                  :AssessmentStep ;
+                         :asks :question14 ,
+                               :question15 ,
+                               :question16 ,
+                               :question17 ,
+                               :question18 ,
+                               :question19 ,
+                               :question2 ,
+                               :question20 ,
+                               :question21 ,
+                               :question22 ,
+                               :question23 ;
+                         :nextStep :PastMedicalHistory ;
+                         :stepName "History of Present Illness" ;
+                         :stepOrder 2 .
+
+
+###  http://example.org/health-assessment#Immunization
+:Immunization rdf:type owl:NamedIndividual ,
+                       :Concept ;
+              :maySuggest :VaccinePreventableDisease ;
+              rdfs:label "Immunization" .
+
+
+###  http://example.org/health-assessment#Infection
+:Infection rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/health-assessment#Medication
+:Medication rdf:type owl:NamedIndividual ,
+                     :Concept ;
+            :maySuggest :AdverseDrugReaction .
+
+
+###  http://example.org/health-assessment#MentalHealth
+:MentalHealth rdf:type owl:NamedIndividual ,
+                       :Concept ;
+              :maySuggest :MentalHealthCondition ;
+              rdfs:label "Mental Health" .
+
+
+###  http://example.org/health-assessment#MentalHealthCondition
+:MentalHealthCondition rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/health-assessment#MetabolicDisorder
+:MetabolicDisorder rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/health-assessment#MusculoskeletalCondition
+:MusculoskeletalCondition rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/health-assessment#NeurologicalCondition
+:NeurologicalCondition rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/health-assessment#NutritionalDeficiency
+:NutritionalDeficiency rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/health-assessment#Obesity
+:Obesity rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/health-assessment#OtherCondition
+:OtherCondition rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/health-assessment#OtherMentalHealthCondition
+:OtherMentalHealthCondition rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/health-assessment#Pain
+:Pain rdf:type owl:NamedIndividual ,
+               :Symptom ;
+      :exacerbates :Pain ;
+      rdfs:label "Pain" .
+
+
+###  http://example.org/health-assessment#PastMedicalHistory
+:PastMedicalHistory rdf:type owl:NamedIndividual ,
+                             :AssessmentStep ;
+                    :asks :question27 ,
+                          :question28 ,
+                          :question3 ,
+                          :question30 ,
+                          :question6 ,
+                          :question7 ,
+                          :question8 ;
+                    :nextStep :FamilyHistory ;
+                    :stepName "Past Medical History" ;
+                    :stepOrder 3 .
+
+
+###  http://example.org/health-assessment#PhysicalExamination
+:PhysicalExamination rdf:type owl:NamedIndividual ,
+                              :AssessmentStep ;
+                     :asks :question13 ;
+                     :nextStep :AssessmentAndPlan ;
+                     :stepName "Physical Examination" ;
+                     :stepOrder 7 .
+
+
+###  http://example.org/health-assessment#PhysicalFitness
+:PhysicalFitness rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/health-assessment#Pneumonia
+:Pneumonia rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/health-assessment#Procedure
+:Procedure rdf:type owl:NamedIndividual ,
+                    :Concept ;
+           :maySuggest :Complication .
+
+
+###  http://example.org/health-assessment#PsychologicalCondition
+:PsychologicalCondition rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/health-assessment#RespiratoryCondition
+:RespiratoryCondition rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/health-assessment#ReviewOfSystems
+:ReviewOfSystems rdf:type owl:NamedIndividual ,
+                          :AssessmentStep ;
+                 :asks :question10 ,
+                       :question9 ;
+                 :nextStep :PhysicalExamination ;
+                 :stepName "Review of Systems" ;
+                 :stepOrder 6 .
+
+
+###  http://example.org/health-assessment#Schizophrenia
+:Schizophrenia rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/health-assessment#SocialHistory
+:SocialHistory rdf:type owl:NamedIndividual ,
+                        :AssessmentStep ;
+               :asks :question12 ,
+                     :question24 ,
+                     :question25 ,
+                     :question5 ;
+               :nextStep :ReviewOfSystems ;
+               :stepName "Social History" ;
+               :stepOrder 5 .
+
+
+###  http://example.org/health-assessment#Stress
+:Stress rdf:type owl:NamedIndividual ,
+                 :Concept ;
+        :maySuggest :StressRelatedCondition ;
+        rdfs:label "Stress" .
+
+
+###  http://example.org/health-assessment#StressRelatedCondition
+:StressRelatedCondition rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/health-assessment#SubstanceAbuse
+:SubstanceAbuse rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/health-assessment#Symptom
+:Symptom rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/health-assessment#VaccinePreventableDisease
+:VaccinePreventableDisease rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/health-assessment#WeightChange
+:WeightChange rdf:type owl:NamedIndividual ,
+                       :Concept ;
+              :maySuggest :MetabolicDisorder ;
+              rdfs:label "Weight Change" .
+
+
+###  http://example.org/health-assessment#question1
+:question1 rdf:type owl:NamedIndividual ,
+                    :AssessmentQuestion ;
+           :questionText "What is your main health concern today?" ;
+           :questionType "open" .
+
+
+###  http://example.org/health-assessment#question10
+:question10 rdf:type owl:NamedIndividual ,
+                     :AssessmentQuestion ;
+            :relatesTo :MentalHealth ;
+            :ruleOut :Anxiety ,
+                     :BipolarDisorder ,
+                     :Depression ,
+                     :EatingDisorder ,
+                     :OtherMentalHealthCondition ,
+                     :Schizophrenia ,
+                     :SubstanceAbuse ;
+            :questionText "How would you describe your mood recently?" ;
+            :questionType "open" .
+
+
+###  http://example.org/health-assessment#question11
+:question11 rdf:type owl:NamedIndividual ,
+                     :AssessmentQuestion ;
+            :relatesTo :Diet ;
+            :ruleOut :EatingDisorder ,
+                     :Obesity ;
+            :questionText "Do you have any concerns about your weight or diet?" ;
+            :questionType "open" .
+
+
+###  http://example.org/health-assessment#question12
+:question12 rdf:type owl:NamedIndividual ,
+                     :AssessmentQuestion ;
+            :relatesTo :Exercise ;
+            :questionText "How often do you exercise?" ;
+            :questionType "open" .
+
+
+###  http://example.org/health-assessment#question13
+:question13 rdf:type owl:NamedIndividual ,
+                     :AssessmentQuestion ;
+            :relatesTo :Pain ;
+            :questionText "Please rate your pain on a scale from 1 to 10" ;
+            :questionType "numeric" .
+
+
+###  http://example.org/health-assessment#question14
+:question14 rdf:type owl:NamedIndividual ,
+                     :AssessmentQuestion ;
+            :relatesTo :Symptom ;
+            :questionText "When did your symptoms first start?" ;
+            :questionType "open" .
+
+
+###  http://example.org/health-assessment#question15
+:question15 rdf:type owl:NamedIndividual ,
+                     :AssessmentQuestion ;
+            :relatesTo :Pain ;
+            :questionText "Where exactly is the pain located?" ;
+            :questionType "open" .
+
+
+###  http://example.org/health-assessment#question16
+:question16 rdf:type owl:NamedIndividual ,
+                     :AssessmentQuestion ;
+            :relatesTo :Pain ;
+            :questionText "Can you describe the character of the pain (e.g., sharp, dull, throbbing)?" ;
+            :questionType "open" .
+
+
+###  http://example.org/health-assessment#question17
+:question17 rdf:type owl:NamedIndividual ,
+                     :AssessmentQuestion ;
+            :relatesTo :Pain ;
+            :questionText "Have you noticed anything that makes the pain worse?" ;
+            :questionType "open" .
+
+
+###  http://example.org/health-assessment#question18
+:question18 rdf:type owl:NamedIndividual ,
+                     :AssessmentQuestion ;
+            :relatesTo :Pain ;
+            :questionText "Have you found anything that makes the pain better?" ;
+            :questionType "open" .
+
+
+###  http://example.org/health-assessment#question19
+:question19 rdf:type owl:NamedIndividual ,
+                     :AssessmentQuestion ;
+            :relatesTo <http://snomed.info/id/267036007> ;
+            :questionText "Have you experienced any shortness of breath?" ;
+            :questionType "closed" .
+
+
+###  http://example.org/health-assessment#question2
+:question2 rdf:type owl:NamedIndividual ,
+                    :AssessmentQuestion ;
+           :relatesTo :Symptom ;
+           :questionText "Can you describe your symptoms?" ;
+           :questionType "open" .
+
+
+###  http://example.org/health-assessment#question20
+:question20 rdf:type owl:NamedIndividual ,
+                     :AssessmentQuestion ;
+            :relatesTo :Fever ;
+            :questionText "Have you had any fever or chills?" ;
+            :questionType "closed" .
+
+
+###  http://example.org/health-assessment#question21
+:question21 rdf:type owl:NamedIndividual ,
+                     :AssessmentQuestion ;
+            :relatesTo :Fatigue ;
+            :questionText "Have you been experiencing any fatigue or unusual tiredness?" ;
+            :questionType "closed" .
+
+
+###  http://example.org/health-assessment#question22
+:question22 rdf:type owl:NamedIndividual ,
+                     :AssessmentQuestion ;
+            :relatesTo :WeightChange ;
+            :questionText "Have you noticed any changes in your weight recently?" ;
+            :questionType "open" .
+
+
+###  http://example.org/health-assessment#question23
+:question23 rdf:type owl:NamedIndividual ,
+                     :AssessmentQuestion ;
+            :relatesTo :Symptom ;
+            :questionText "Are there any other symptoms you're experiencing?" ;
+            :questionType "open" .
+
+
+###  http://example.org/health-assessment#question24
+:question24 rdf:type owl:NamedIndividual ,
+                     :AssessmentQuestion ;
+            :relatesTo :Diet ;
+            :questionText "What is your typical diet like?" ;
+            :questionType "open" .
+
+
+###  http://example.org/health-assessment#question25
+:question25 rdf:type owl:NamedIndividual ,
+                     :AssessmentQuestion ;
+            :relatesTo :Stress ;
+            :questionText "How would you describe your stress levels?" ;
+            :questionType "open" .
+
+
+###  http://example.org/health-assessment#question26
+:question26 rdf:type owl:NamedIndividual ,
+                     :AssessmentQuestion ;
+            :relatesTo <http://snomed.info/id/73211009> ;
+            :questionText "Do you have a family history of diabetes?" ;
+            :questionType "closed" .
+
+
+###  http://example.org/health-assessment#question27
+:question27 rdf:type owl:NamedIndividual ,
+                     :AssessmentQuestion ;
+            :relatesTo <http://snomed.info/id/13213009> ;
+            :questionText "Have you ever been diagnosed with high blood pressure?" ;
+            :questionType "closed" .
+
+
+###  http://example.org/health-assessment#question28
+:question28 rdf:type owl:NamedIndividual ,
+                     :AssessmentQuestion ;
+            :relatesTo :Medication ;
+            :questionText "Do you have any known allergies to medications?" ;
+            :questionType "open" .
+
+
+###  http://example.org/health-assessment#question29
+:question29 rdf:type owl:NamedIndividual ,
+                     :AssessmentQuestion ;
+            :relatesTo :Medication ;
+            :questionText "What is the name and dosage of the medication you are taking?" ;
+            :questionType "open" .
+
+
+###  http://example.org/health-assessment#question3
+:question3 rdf:type owl:NamedIndividual ,
+                    :AssessmentQuestion ;
+           :relatesTo :Diagnosis ;
+           :questionText "Have you ever been diagnosed with any medical conditions?" ;
+           :questionType "closed" .
+
+
+###  http://example.org/health-assessment#question30
+:question30 rdf:type owl:NamedIndividual ,
+                     :AssessmentQuestion ;
+            :relatesTo :Immunization ;
+            :questionText "Have you received any vaccinations recently?" ;
+            :questionType "open" .
+
+
+###  http://example.org/health-assessment#question4
+:question4 rdf:type owl:NamedIndividual ,
+                    :AssessmentQuestion ;
+           :relatesTo <http://snomed.info/id/56265001> ;
+           :questionText "Does anyone in your family have a history of heart disease?" ;
+           :questionType "closed" .
+
+
+###  http://example.org/health-assessment#question5
+:question5 rdf:type owl:NamedIndividual ,
+                    :AssessmentQuestion ;
+           :relatesTo <http://snomed.info/id/422968005> ;
+           :questionText "Do you smoke?" ;
+           :questionType "closed" .
+
+
+###  http://example.org/health-assessment#question6
+:question6 rdf:type owl:NamedIndividual ,
+                    :AssessmentQuestion ;
+           :relatesTo :Allergy ;
+           :questionText "Do you have any allergies?" ;
+           :questionType "open" .
+
+
+###  http://example.org/health-assessment#question7
+:question7 rdf:type owl:NamedIndividual ,
+                    :AssessmentQuestion ;
+           :relatesTo :Medication ;
+           :questionText "Are you currently taking any medications?" ;
+           :questionType "open" .
+
+
+###  http://example.org/health-assessment#question8
+:question8 rdf:type owl:NamedIndividual ,
+                    :AssessmentQuestion ;
+           :relatesTo :Procedure ;
+           :questionText "Have you had any surgeries in the past?" ;
+           :questionType "open" .
+
+
+###  http://example.org/health-assessment#question9
+:question9 rdf:type owl:NamedIndividual ,
+                    :AssessmentQuestion ;
+           :relatesTo :Pain ;
+           :ruleOut :GastrointestinalCondition ,
+                    :HeartDisease ,
+                    :MusculoskeletalCondition ,
+                    :NeurologicalCondition ,
+                    :OtherCondition ,
+                    :Pneumonia ,
+                    :PsychologicalCondition ;
+           :questionText "Do you have any pain?" ;
+           :questionType "closed" .
+
+
+###  http://snomed.info/id/13213009
+<http://snomed.info/id/13213009> rdf:type owl:NamedIndividual .
+
+
+###  http://snomed.info/id/267036007
+<http://snomed.info/id/267036007> rdf:type owl:NamedIndividual .
+
+
+###  http://snomed.info/id/422968005
+<http://snomed.info/id/422968005> rdf:type owl:NamedIndividual .
+
+
+###  http://snomed.info/id/56265001
+<http://snomed.info/id/56265001> rdf:type owl:NamedIndividual .
+
+
+###  http://snomed.info/id/73211009
+<http://snomed.info/id/73211009> rdf:type owl:NamedIndividual .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+:Diagnosis rdfs:comment "Represents a diagnosis or medical condition."@en ;
+           rdfs:label "Diagnosis"@en .
+
+
+:Medication rdfs:comment "Represents a medication that a user is taking or has taken."@en ;
+            rdfs:label "Medication"@en ,
+                       "Medication" .
+
+
+:Procedure rdfs:comment "Represents a medical or surgical procedure."@en ;
+           rdfs:label "Procedure"@en ,
+                      "Procedure" .
+
+
+:Symptom rdfs:comment "Represents a symptom reported by the user or observed during the assessment."@en ;
+         rdfs:label "Symptom"@en .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi

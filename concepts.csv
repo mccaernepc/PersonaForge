@@ -1,0 +1,45 @@
+concept_id:ID,:LABEL,concept_type,active_ingredient,snomed_code,snomed_uri
+1,Comprehensive health assessment,Procedure,,276301004,http://snomed.info/id/276301004
+2,Primary care assessment,Procedure,,308646004,http://snomed.info/id/308646004
+3,Pediatric health assessment,Procedure,,282375000,http://snomed.info/id/282375000
+4,Acute care assessment,Procedure,,257858004,http://snomed.info/id/257858004
+5,Artificial intelligence in healthcare,Substance,,424121000000109,http://snomed.info/id/424121000000109
+6,Risk assessment procedure,Procedure,,368209003,http://snomed.info/id/368209003
+7,Elderly health assessment,Procedure,,41819003,http://snomed.info/id/41819003
+8,Electronic health record system,System,,117681000119100,http://snomed.info/id/117681000119100
+9,Diagnostic procedure,Procedure,,304527004,http://snomed.info/id/304527004
+10,Patient history taking,Procedure,,309201000,http://snomed.info/id/309201000
+11,Physical examination,Procedure,,289693003,http://snomed.info/id/289693003
+12,Laboratory procedure,Procedure,,324121000000109,http://snomed.info/id/324121000000109
+13,Imaging procedure,Procedure,,118343000,http://snomed.info/id/118343000
+14,Differential diagnosis,Procedure,,908130001,http://snomed.info/id/908130001
+15,Diagnosis confirmation,Procedure,,266045000,http://snomed.info/id/266045000
+16,Clinical decision making,Procedure,,408456000,http://snomed.info/id/408456000
+17,Patient consultation,Procedure,,751000119104,http://snomed.info/id/751000119104
+18,Diagnosis,Procedure,,164909000,http://snomed.info/id/164909000
+19,Pediatric examination,Procedure,,11274003,http://snomed.info/id/11274003
+20,Neonatal examination,Procedure,,324121000000107,http://snomed.info/id/324121000000107
+21,Growth monitoring (pediatric),Procedure,,249077003,http://snomed.info/id/249077003
+22,Pediatric immunization,Procedure,,32212007,http://snomed.info/id/32212007
+23,Infant developmental screening,Procedure,,290601001,http://snomed.info/id/290601001
+24,Geriatric assessment,Procedure,,363406005,http://snomed.info/id/363406005
+25,Cognitive assessment in elderly,Procedure,,26913002,http://snomed.info/id/26913002
+26,Falls assessment,Procedure,,405813003,http://snomed.info/id/405813003
+27,Geriatric syndrome,Procedure,,18300007,http://snomed.info/id/18300007
+28,Polypharmacy in elderly,Procedure,,951000119104,http://snomed.info/id/951000119104
+29,Acute care examination,Procedure,,428301000000109,http://snomed.info/id/428301000000109
+30,Acute respiratory infection,Procedure,,122148000,http://snomed.info/id/122148000
+31,Acute pain management,Procedure,,39579001,http://snomed.info/id/39579001
+32,Emergency care intervention,Procedure,,38000007,http://snomed.info/id/38000007
+33,Chronic disease management,Procedure,,384826000,http://snomed.info/id/384826000
+34,Preventive care services,Procedure,,90721000119103,http://snomed.info/id/90721000119103
+35,Routine physical examination,Procedure,,320128006,http://snomed.info/id/320128006
+36,Treatment plan,Procedure,,907211000119104,http://snomed.info/id/907211000119104
+37,Pharmacotherapy,Procedure,,433144002,http://snomed.info/id/433144002
+38,Surgical treatment,Procedure,,10305001,http://snomed.info/id/10305001
+39,Rehabilitation therapy,Procedure,,237000119104,http://snomed.info/id/237000119104
+40,Behavioral therapy,Procedure,,19173003,http://snomed.info/id/19173003
+41,Nutritional intervention,Procedure,,32412002,http://snomed.info/id/32412002
+42,Clinical observation,Procedure,,31547003,http://snomed.info/id/31547003
+43,Decision support,Procedure,,129131000000109,http://snomed.info/id/129131000000109
+44,Machine learning model in medicine,Procedure,,267038008,http://snomed.info/id/267038008

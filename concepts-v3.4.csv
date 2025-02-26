@@ -1,0 +1,310 @@
+snomed_code,name,concept_type,snomed_uri
+276301004,Comprehensive health assessment,Procedure,http://snomed.info/id/276301004
+308646004,Primary care assessment,Procedure,http://snomed.info/id/308646004
+282375000,Pediatric health assessment,Procedure,http://snomed.info/id/282375000
+257858004,Acute care assessment,Procedure,http://snomed.info/id/257858004
+424121000000109,Artificial intelligence in healthcare,Substance,http://snomed.info/id/424121000000109
+368209003,Risk assessment procedure,Procedure,http://snomed.info/id/368209003
+41819003,Elderly health assessment,Procedure,http://snomed.info/id/41819003
+117681000119100,Electronic health record system,System,http://snomed.info/id/117681000119100
+304527004,Diagnostic procedure,Procedure,http://snomed.info/id/304527004
+309201000,Patient history taking,Procedure,http://snomed.info/id/309201000
+289693003,Physical examination,Procedure,http://snomed.info/id/289693003
+324121000000109,Laboratory procedure,Procedure,http://snomed.info/id/324121000000109
+118343000,Imaging procedure,Procedure,http://snomed.info/id/118343000
+908130001,Differential diagnosis,Procedure,http://snomed.info/id/908130001
+266045000,Diagnosis confirmation,Procedure,http://snomed.info/id/266045000
+408456000,Clinical decision making,Procedure,http://snomed.info/id/408456000
+751000119104,Patient consultation,Procedure,http://snomed.info/id/751000119104
+164909000,Diagnosis,Procedure,http://snomed.info/id/164909000
+11274003,Pediatric examination,Procedure,http://snomed.info/id/11274003
+324121000000107,Neonatal examination,Procedure,http://snomed.info/id/324121000000107
+249077003,Growth monitoring (pediatric),Procedure,http://snomed.info/id/249077003
+32212007,Pediatric immunization,Procedure,http://snomed.info/id/32212007
+290601001,Infant developmental screening,Procedure,http://snomed.info/id/290601001
+363406005,Geriatric assessment,Procedure,http://snomed.info/id/363406005
+26913002,Cognitive assessment in elderly,Procedure,http://snomed.info/id/26913002
+405813003,Falls assessment,Procedure,http://snomed.info/id/405813003
+18300007,Geriatric syndrome,Procedure,http://snomed.info/id/18300007
+951000119104,Polypharmacy in elderly,Procedure,http://snomed.info/id/951000119104
+428301000000109,Acute care examination,Procedure,http://snomed.info/id/428301000000109
+122148000,Acute respiratory infection,Procedure,http://snomed.info/id/122148000
+39579001,Acute pain management,Procedure,http://snomed.info/id/39579001
+38000007,Emergency care intervention,Procedure,http://snomed.info/id/38000007
+384826000,Chronic disease management,Procedure,http://snomed.info/id/384826000
+90721000119103,Preventive care services,Procedure,http://snomed.info/id/90721000119103
+320128006,Routine physical examination,Procedure,http://snomed.info/id/320128006
+907211000119104,Treatment plan,Procedure,http://snomed.info/id/907211000119104
+433144002,Pharmacotherapy,Procedure,http://snomed.info/id/433144002
+10305001,Surgical treatment,Procedure,http://snomed.info/id/10305001
+237000119104,Rehabilitation therapy,Procedure,http://snomed.info/id/237000119104
+19173003,Behavioral therapy,Procedure,http://snomed.info/id/19173003
+32412002,Nutritional intervention,Procedure,http://snomed.info/id/32412002
+31547003,Clinical observation,Procedure,http://snomed.info/id/31547003
+129131000000109,Decision support,Procedure,http://snomed.info/id/129131000000109
+267038008,Machine learning model in medicine,Procedure,http://snomed.info/id/267038008
+230690007,Diabetes mellitus type 2,Finding,http://snomed.info/id/230690007
+706177006,Electrocardiogram machine,Physical Object,http://snomed.info/id/706177006
+267036007,Chest pain,Finding,http://snomed.info/id/267036007
+29857009,Dyspnea,Finding,http://snomed.info/id/29857009
+56265001,Hypertension,Finding,http://snomed.info/id/38341003
+373873005,Metformin (substance),Substance,http://snomed.info/id/373873005
+91251008,Heart Failure Clinical Pathway,Situation,http://snomed.info/id/91251008
+311466009,Blood glucose level,Observable Entity,http://snomed.info/id/311466009
+166717003,Hemoglobin A1c,Observable Entity,http://snomed.info/id/431314004
+26158009,Magnetic Resonance Imaging,Physical Object,http://snomed.info/id/26158009
+387517004,Lisinopril (substance),Substance,http://snomed.info/id/387517004
+302419005,Serum creatinine,Observable Entity,http://snomed.info/id/302419005
+225337009,Myocardial infarction,Finding,http://snomed.info/id/225337009
+195967001,Asthma,Finding,http://snomed.info/id/195967001
+73211009,Pneumonia,Finding,http://snomed.info/id/73211009
+363346000,Major depressive disorder,Finding,http://snomed.info/id/363346000
+722411006,Osteoarthritis,Finding,http://snomed.info/id/22531008
+40055000,Chronic Kidney Disease,Finding,http://snomed.info/id/90708001
+7891000122101,Chest X-ray finding,Observable Entity,http://snomed.info/id/7891000122101
+700470000,Intermittent,Temporal Pattern,http://snomed.info/id/700470000
+442083009,Heart,Body Structure,http://snomed.info/id/442083009
+1240311000000100,Asthma Management Pathway,Situation,http://snomed.info/id/1240311000000100
+394814009,Pulmonology,Qualifier Value,http://snomed.info/id/394814009
+422587007,Fever,Finding,http://snomed.info/id/37066001
+62315008,Fatigue,Finding,http://snomed.info/id/86957009
+49727002,Headache,Finding,http://snomed.info/id/25064002
+162397003,Joint pain,Finding,http://snomed.info/id/57676002
+89837001,Lung,Body Structure,http://snomed.info/id/89837001
+64572001,Brain,Body Structure,http://snomed.info/id/12830008
+39607008,Kidney,Body Structure,http://snomed.info/id/39607008
+46706000,Stethoscope,Physical Object,http://snomed.info/id/46706000
+394802001,Cardiology,Qualifier Value,http://snomed.info/id/394802001
+386864001,Amoxicillin (substance),Substance,http://snomed.info/id/386864001
+702854004,Diagnostic algorithm,Situation,http://snomed.info/id/702854004
+441862004,Risk Score,Situation,http://snomed.info/id/441862004
+225323000,Family History,Finding,http://snomed.info/id/161831008
+302225007,Smoking,Finding,http://snomed.info/id/285179001
+160670009,Obesity,Finding,http://snomed.info/id/414916001
+712500003,Clinical Pathway,Situation,http://snomed.info/id/712500003
+394587001,Neurology,Qualifier Value,http://snomed.info/id/394587001
+408480009,Gastroenterology,Qualifier Value,http://snomed.info/id/408480009
+394600006,General practice,Qualifier Value,http://snomed.info/id/394600006
+394592000,Psychiatry,Qualifier Value,http://snomed.info/id/394592000
+394578007,Dermatology,Qualifier Value,http://snomed.info/id/394578007
+44054006,Type 1 Diabetes Mellitus,Finding,http://snomed.info/id/44054006
+426749004,Systolic Hypertension,Finding,http://snomed.info/id/426749004
+427095000,ST elevation myocardial infarction,Finding,http://snomed.info/id/427095000
+413819002,Chronic Obstructive Asthma,Finding,http://snomed.info/id/413819002
+713105004,Brain MRI finding,Observable Entity,http://snomed.info/id/713105004
+39937001,Wound management,Procedure,http://snomed.info/id/39937001
+723665000,Dressing change of wound,Procedure,http://snomed.info/id/723665000
+118779008,Debridement of wound,Procedure,http://snomed.info/id/118779008
+473157000,Negative pressure wound therapy,Procedure,http://snomed.info/id/473157000
+439347004,Diagnosis of skin lesion,Procedure,http://snomed.info/id/439347004
+118949000,Treatment of skin lesion,Procedure,http://snomed.info/id/118949000
+55641003,Skin lesion,Finding,http://snomed.info/id/55641003
+225564006,Assessment of skin lesion,Procedure,http://snomed.info/id/225564006
+86273004,Biopsy of skin lesion,Procedure,http://snomed.info/id/86273004
+405813007,Excision of skin lesion,Procedure,http://snomed.info/id/405813007
+439900001,Cryotherapy of skin lesion,Procedure,http://snomed.info/id/439900001
+134355008,Laser therapy for skin lesion,Procedure,http://snomed.info/id/134355008
+118672007,Topical treatment for skin lesion,Procedure,http://snomed.info/id/118672007
+75367002,Topical antiseptic,Substance,http://snomed.info/id/75367002
+372674009,Antimicrobial dressing,Substance,http://snomed.info/id/372674009
+284039007,Acute Care,Qualifier Value,http://snomed.info/id/284039007
+394576009,Primary Care,Qualifier Value,http://snomed.info/id/394576009
+278030005,Infected wound,Finding,http://snomed.info/id/278030005
+25064002,Nausea,Symptom,http://snomed.info/id/25064002
+6142004,Influenza,Disease,http://snomed.info/id/6142004
+57831003,Fibromyalgia,Disorder,http://snomed.info/id/57831003
+260870009,Stress,Modifying Factor,http://snomed.info/id/260870009
+700470000,Intermittent,Temporal Pattern,http://snomed.info/id/700470000
+68962003,Edema,Sign,http://snomed.info/id/68962003
+28442006,Polyuria,Symptom,http://snomed.info/id/28442006
+13791008,Weakness,Symptom,http://snomed.info/id/13791008
+57610008,Carpal Tunnel Syndrome,Disorder,http://snomed.info/id/57610008
+267450006,Paresthesia of hand,Finding,http://snomed.info/id/267450006
+399261007,Respiratory syncytial virus bronchiolitis,Disease,http://snomed.info/id/399261007
+24079001,Osteoporosis,Disease,http://snomed.info/id/24079001
+199030000,Febrile seizure,Disease,http://snomed.info/id/199030000
+410515003,Self-management education,Procedure,http://snomed.info/id/410515003
+709062004,Medication review,Procedure,http://snomed.info/id/709062004
+40272000,Pressure ulcer,Finding,http://snomed.info/id/40272000
+24821004,Pressure ulcer prevention,Procedure,http://snomed.info/id/24821004
+68566005,Chlamydia infection,Disease,http://snomed.info/id/68566005
+77386006,Pregnancy,Situation,http://snomed.info/id/77386006
+17621005,Prostatitis,Disease,http://snomed.info/id/17621005
+364203005,Postmenopausal bleeding,Finding,http://snomed.info/id/364203005
+266919005,Weight,Observable Entity,http://snomed.info/id/266919005
+266920004,Height,Observable Entity,http://snomed.info/id/266920004
+274669000,Pain management,Procedure,http://snomed.info/id/274669000
+225348003,Chronic pain,Finding,http://snomed.info/id/225348003
+160971007,Comorbidity,Finding,http://snomed.info/id/160971007
+418002005,Medical Emergency,Situation,http://snomed.info/id/418002005
+78703007,Altered mental status,Finding,http://snomed.info/id/78703007
+84757009,Hypotension,Finding,http://snomed.info/id/84757009
+426037007,Tachycardia,Finding,http://snomed.info/id/426037007
+308646004,Primary care assessment,Procedure,http://snomed.info/id/308646004
+282375000,Pediatric health assessment,Procedure,http://snomed.info/id/282375000
+257858004,Acute care assessment,Procedure,http://snomed.info/id/257858004
+424121000000109,Artificial intelligence in healthcare,Substance,http://snomed.info/id/424121000000109
+368209003,Risk assessment procedure,Procedure,http://snomed.info/id/368209003
+41819003,Elderly health assessment,Procedure,http://snomed.info/id/41819003
+117681000119100,Electronic health record system,System,http://snomed.info/id/117681000119100
+304527004,Diagnostic procedure,Procedure,http://snomed.info/id/304527004
+309201000,Patient history taking,Procedure,http://snomed.info/id/309201000
+289693003,Physical examination,Procedure,http://snomed.info/id/289693003
+324121000000109,Laboratory procedure,Procedure,http://snomed.info/id/324121000000109
+118343000,Imaging procedure,Procedure,http://snomed.info/id/118343000
+908130001,Differential diagnosis,Procedure,http://snomed.info/id/908130001
+266045000,Diagnosis confirmation,Procedure,http://snomed.info/id/266045000
+408456000,Clinical decision making,Procedure,http://snomed.info/id/408456000
+751000119104,Patient consultation,Procedure,http://snomed.info/id/751000119104
+164909000,Diagnosis,Procedure,http://snomed.info/id/164909000
+11274003,Pediatric examination,Procedure,http://snomed.info/id/11274003
+324121000000107,Neonatal examination,Procedure,http://snomed.info/id/324121000000107
+249077003,Growth monitoring (pediatric),Procedure,http://snomed.info/id/249077003
+32212007,Pediatric immunization,Procedure,http://snomed.info/id/32212007
+290601001,Infant developmental screening,Procedure,http://snomed.info/id/290601001
+363406005,Geriatric assessment,Procedure,http://snomed.info/id/363406005
+26913002,Cognitive assessment in elderly,Procedure,http://snomed.info/id/26913002
+405813003,Falls assessment,Procedure,http://snomed.info/id/405813003
+18300007,Geriatric syndrome,Procedure,http://snomed.info/id/18300007
+951000119104,Polypharmacy in elderly,Procedure,http://snomed.info/id/951000119104
+428301000000109,Acute care examination,Procedure,http://snomed.info/id/428301000000109
+122148000,Acute respiratory infection,Procedure,http://snomed.info/id/122148000
+39579001,Acute pain management,Procedure,http://snomed.info/id/39579001
+38000007,Emergency care intervention,Procedure,http://snomed.info/id/38000007
+384826000,Chronic disease management,Procedure,http://snomed.info/id/384826000
+90721000119103,Preventive care services,Procedure,http://snomed.info/id/90721000119103
+320128006,Routine physical examination,Procedure,http://snomed.info/id/320128006
+907211000119104,Treatment plan,Procedure,http://snomed.info/id/907211000119104
+433144002,Pharmacotherapy,Procedure,http://snomed.info/id/433144002
+10305001,Surgical treatment,Procedure,http://snomed.info/id/10305001
+237000119104,Rehabilitation therapy,Procedure,http://snomed.info/id/237000119104
+19173003,Behavioral therapy,Procedure,http://snomed.info/id/19173003
+32412002,Nutritional intervention,Procedure,http://snomed.info/id/32412002
+31547003,Clinical observation,Procedure,http://snomed.info/id/31547003
+129131000000109,Decision support,Procedure,http://snomed.info/id/129131000000109
+267038008,Machine learning model in medicine,Procedure,http://snomed.info/id/267038008
+230690007,Diabetes mellitus type 2,Finding,http://snomed.info/id/230690007
+706177006,Electrocardiogram machine,Physical Object,http://snomed.info/id/706177006
+267036007,Chest pain,Finding,http://snomed.info/id/267036007
+29857009,Dyspnea,Finding,http://snomed.info/id/29857009
+56265001,Hypertension,Finding,http://snomed.info/id/38341003
+373873005,Metformin (substance),Substance,http://snomed.info/id/373873005
+91251008,Heart Failure Clinical Pathway,Situation,http://snomed.info/id/91251008
+311466009,Blood glucose level,Observable Entity,http://snomed.info/id/311466009
+166717003,Hemoglobin A1c,Observable Entity,http://snomed.info/id/431314004
+26158009,Magnetic Resonance Imaging,Physical Object,http://snomed.info/id/26158009
+387517004,Lisinopril (substance),Substance,http://snomed.info/id/387517004
+302419005,Serum creatinine,Observable Entity,http://snomed.info/id/302419005
+225337009,Myocardial infarction,Finding,http://snomed.info/id/225337009
+195967001,Asthma,Finding,http://snomed.info/id/195967001
+73211009,Pneumonia,Finding,http://snomed.info/id/73211009
+363346000,Major depressive disorder,Finding,http://snomed.info/id/363346000
+722411006,Osteoarthritis,Finding,http://snomed.info/id/22531008
+40055000,Chronic Kidney Disease,Finding,http://snomed.info/id/90708001
+7891000122101,Chest X-ray finding,Observable Entity,http://snomed.info/id/7891000122101
+442083009,Heart,Body Structure,http://snomed.info/id/442083009
+1240311000000100,Asthma Management Pathway,Situation,http://snomed.info/id/1240311000000100
+394814009,Pulmonology,Qualifier Value,http://snomed.info/id/394814009
+422587007,Fever,Finding,http://snomed.info/id/37066001
+62315008,Fatigue,Finding,http://snomed.info/id/86957009
+49727002,Headache,Finding,http://snomed.info/id/25064002
+162397003,Joint pain,Finding,http://snomed.info/id/57676002
+89837001,Lung,Body Structure,http://snomed.info/id/89837001
+64572001,Brain,Body Structure,http://snomed.info/id/12830008
+39607008,Kidney,Body Structure,http://snomed.info/id/39607008
+46706000,Stethoscope,Physical Object,http://snomed.info/id/46706000
+394802001,Cardiology,Qualifier Value,http://snomed.info/id/394802001
+386864001,Amoxicillin (substance),Substance,http://snomed.info/id/386864001
+702854004,Diagnostic algorithm,Situation,http://snomed.info/id/702854004
+441862004,Risk Score,Situation,http://snomed.info/id/441862004
+225323000,Family History,Finding,http://snomed.info/id/225323000
+160670009,Obesity,Finding,http://snomed.info/id/414916001
+712500003,Clinical Pathway,Situation,http://snomed.info/id/712500003
+394587001,Neurology,Qualifier Value,http://snomed.info/id/394587001
+408480009,Gastroenterology,Qualifier Value,http://snomed.info/id/408480009
+394600006,General practice,Qualifier Value,http://snomed.info/id/394600006
+394592000,Psychiatry,Qualifier Value,http://snomed.info/id/394592000
+394578007,Dermatology,Qualifier Value,http://snomed.info/id/394578007
+44054006,Type 1 Diabetes Mellitus,Finding,http://snomed.info/id/44054006
+426749004,Systolic Hypertension,Finding,http://snomed.info/id/426749004
+427095000,ST elevation myocardial infarction,Finding,http://snomed.info/id/427095000
+413819002,Chronic Obstructive Asthma,Finding,http://snomed.info/id/413819002
+713105004,Brain MRI finding,Observable Entity,http://snomed.info/id/713105004
+39937001,Wound management,Procedure,http://snomed.info/id/39937001
+723665000,Dressing change of wound,Procedure,http://snomed.info/id/723665000
+118779008,Debridement of wound,Procedure,http://snomed.info/id/118779008
+473157000,Negative pressure wound therapy,Procedure,http://snomed.info/id/473157000
+439347004,Diagnosis of skin lesion,Procedure,http://snomed.info/id/439347004
+118949000,Treatment of skin lesion,Procedure,http://snomed.info/id/118949000
+55641003,Skin lesion,Finding,http://snomed.info/id/55641003
+225564006,Assessment of skin lesion,Procedure,http://snomed.info/id/225564006
+86273004,Biopsy of skin lesion,Procedure,http://snomed.info/id/86273004
+405813007,Excision of skin lesion,Procedure,http://snomed.info/id/405813007
+439900001,Cryotherapy of skin lesion,Procedure,http://snomed.info/id/439900001
+134355008,Laser therapy for skin lesion,Procedure,http://snomed.info/id/134355008
+118672007,Topical treatment for skin lesion,Procedure,http://snomed.info/id/118672007
+75367002,Topical antiseptic,Substance,http://snomed.info/id/75367002
+372674009,Antimicrobial dressing,Substance,http://snomed.info/id/372674009
+284039007,Acute Care,Qualifier Value,http://snomed.info/id/284039007
+394576009,Primary Care,Qualifier Value,http://snomed.info/id/394576009
+278030005,Infected wound,Finding,http://snomed.info/id/278030005
+25064002,Nausea,Symptom,http://snomed.info/id/25064002
+6142004,Influenza,Disease,http://snomed.info/id/6142004
+57831003,Fibromyalgia,Disorder,http://snomed.info/id/57831003
+260870009,Stress,Modifying Factor,http://snomed.info/id/260870009
+700470000,Intermittent,Temporal Pattern,http://snomed.info/id/700470000
+68962003,Edema,Sign,http://snomed.info/id/68962003
+28442006,Polyuria,Symptom,http://snomed.info/id/28442006
+13791008,Weakness,Symptom,http://snomed.info/id/13791008
+57610008,Carpal Tunnel Syndrome,Disorder,http://snomed.info/id/57610008
+267450006,Paresthesia of hand,Finding,http://snomed.info/id/267450006
+399261007,Respiratory syncytial virus bronchiolitis,Disease,http://snomed.info/id/399261007
+24079001,Osteoporosis,Disease,http://snomed.info/id/24079001
+199030000,Febrile seizure,Disease,http://snomed.info/id/199030000
+410515003,Self-management education,Procedure,http://snomed.info/id/410515003
+709062004,Medication review,Procedure,http://snomed.info/id/709062004
+40272000,Pressure ulcer,Finding,http://snomed.info/id/40272000
+24821004,Pressure ulcer prevention,Procedure,http://snomed.info/id/24821004
+68566005,Chlamydia infection,Disease,http://snomed.info/id/68566005
+77386006,Pregnancy,Situation,http://snomed.info/id/77386006
+17621005,Prostatitis,Disease,http://snomed.info/id/17621005
+364203005,Postmenopausal bleeding,Finding,http://snomed.info/id/364203005
+266919005,Weight,Observable Entity,http://snomed.info/id/266919005
+266920004,Height,Observable Entity,http://snomed.info/id/266920004
+274669000,Pain management,Procedure,http://snomed.info/id/274669000
+225348003,Chronic pain,Finding,http://snomed.info/id/225348003
+160971007,Comorbidity,Finding,http://snomed.info/id/160971007
+418002005,Medical Emergency,Situation,http://snomed.info/id/418002005
+78703007,Altered mental status,Finding,http://snomed.info/id/78703007
+84757009,Hypotension,Finding,http://snomed.info/id/84757009
+426037007,Tachycardia,Finding,http://snomed.info/id/426037007
+394579004,Obstetrics,Qualifier Value, http://snomed.info/id/394579004
+45323000,Infant,Qualifier Value,http://snomed.info/id/45323000
+26042002,Adult,Qualifier Value, http://snomed.info/id/26042002
+255606004,Elderly,Qualifier Value, http://snomed.info/id/255606004
+408474005,Critical Care,Qualifier Value, http://snomed.info/id/408474005
+371581003,Emergency Room,Qualifier Value,http://snomed.info/id/371581003
+Flu,"Influenza (Lay Term)","Lay Term",
+Heart Attack,"Myocardial Infarction (Lay Term)","Lay Term",
+"snomed_code","name","concept_type","snomed_uri"
+... (All previous concepts.csv data, with strings quoted) ...
+"394579004","Obstetrics","Qualifier Value","http://snomed.info/id/394579004"
+"45323000","Infant","Qualifier Value","http://snomed.info/id/45323000"
+"26042002","Adult","Qualifier Value","http://snomed.info/id/26042002"
+"255606004","Elderly","Qualifier Value","http://snomed.info/id/255606004"
+"408474005","Critical Care","Qualifier Value","http://snomed.info/id/408474005"
+"371581003","Emergency Room","Qualifier Value","http://snomed.info/id/371581003"
+,"Flu","Lay Term",
+,"Heart attack","Lay Term",
+,"Tummy ache","Lay Term",
+,"Sugar","Lay Term",
+,"Winded","Lay Term",
+,"Achy joints","Lay Term",
+,"Waterworks","Lay Term",
+,"Sleeping sickness","Lay Term",
+,"Running a fever","Lay Term",
+,"Feeling wiped out","Lay Term",
+,"Head pounder","Lay Term",
+,"Funny turn","Lay Term",
+,"Blocked up","Lay Term",
+,"Lurgy","Lay Term",                
